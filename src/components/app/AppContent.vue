@@ -63,7 +63,6 @@ export default {
     },
 
     showEditBotModal(bot) {
-      console.log('show edit modal')
       this.bot = bot
       this.isModalVisible = true
     },
