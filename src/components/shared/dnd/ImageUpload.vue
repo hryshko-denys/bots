@@ -2,7 +2,11 @@
   <div class="modal__drag-wrapper">
     <template v-if="imageUploaded">
       <div class="images__wrapper">
-        <img :src="image.src" alt="`Image ${index}`" class="images__item" />
+        <img
+          :src="image.src"
+          :alt="`Image ${image.name}`"
+          class="images__item"
+        />
         <div class="images__details">
           <span class="images__name" v-text="image.name"></span>
         </div>
@@ -17,12 +21,13 @@
         Drag your image here
       </h2>
     </template>
+
     <label
       for="file"
       class="modal__label modal__label--button"
       v-bind:class="{ modal__image_error: error }"
     >
-      {{ !image ? ' Select a file' : 'Select another file' }}
+      {{ !image ? 'Select a file' : 'Select another file' }}
     </label>
 
     <input

@@ -1,6 +1,6 @@
 <template>
   <div class="modal__field-wrapper">
-    <label for="name" class="modal__label modal__label--text">
+    <label :for="name" class="modal__label modal__label--text">
       {{ label }}
     </label>
     <div

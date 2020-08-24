@@ -9,7 +9,7 @@
     <bots-list
       v-else
       :bots="bots"
-      @show-bot-edit-modal="showEditBotModal"
+      @bot-click="showEditBotModal"
       @delete-bot="deleteBot"
     />
 

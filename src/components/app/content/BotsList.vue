@@ -5,7 +5,7 @@
         <BotItem
           :bot="bot"
           @delete-bot="$emit('delete-bot', $event)"
-          @show-bot-edit-modal="$emit('show-bot-edit-modal', $event)"
+          @show-bot-edit-modal="$emit('bot-click', $event)"
         />
       </li>
     </ol>

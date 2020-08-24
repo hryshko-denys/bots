@@ -3,21 +3,21 @@
     <form class="modal__form" ref="form" @submit.prevent="submitForm">
       <div>
         <base-input
+          style="margin-bottom: 2.5rem"
           name="name"
           label="Name"
           v-model="name"
           :error="nameError"
           @validate="validateName"
-          style="margin-bottom: 2.5rem"
         />
 
         <base-textarea
+          style="margin-bottom: 2.5rem"
           name="description"
           label="Description"
           v-model="description"
           :error="descriptionError"
           @validate="validateDescription"
-          style="margin-bottom: 2.5rem"
         />
 
         <image-dnd :image="image" @file-input="image = $event" />
@@ -67,7 +67,7 @@ export default {
 
       editBotInfo: {
         title: 'Edit bot',
-        acceptText: 'Edit bot'
+        acceptText: 'Save changes'
       },
 
       name: '',
@@ -86,6 +86,7 @@ export default {
     name() {
       if (this.nameInputDirty) this.validateName()
     },
+
     description() {
       if (this.descriptionInputDirty) this.validateDescription()
     },
@@ -111,7 +112,7 @@ export default {
     },
 
     isFormValid() {
-      return !this.nameError && !this.descriptionError && !!this.image
+      return !this.nameError && !this.descriptionError && this.image
     }
   },
 
@@ -124,17 +125,22 @@ export default {
       } else {
         this.$emit('add-bot', bot)
       }
+
       this.clearForm()
     },
 
     validateName() {
-      this.nameError = isValueValid(this.name)
-      this.nameInputDirty = true
+      if (this.name) {
+        this.nameError = isValueValid(this.name)
+        this.nameInputDirty = true
+      }
     },
 
     validateDescription() {
-      this.descriptionError = isValueValid(this.description)
-      this.descriptionInputDirty = true
+      if (this.description) {
+        this.descriptionError = isValueValid(this.description)
+        this.descriptionInputDirty = true
+      }
     },
 
     closeModal() {

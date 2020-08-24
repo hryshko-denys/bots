@@ -11,6 +11,7 @@ export default {
   }
 }
 </script>
+
 <style lang="scss">
 .create-bot-btn {
   position: relative;

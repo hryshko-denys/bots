@@ -1,6 +1,6 @@
 <template>
-  <transition v-if="show" appear>
-    <div>
+  <transition appear>
+    <div v-if="show">
       <div class="modal__wrapper">
         <div class="modal__overlay" @click="$emit('close')"></div>
       </div>
