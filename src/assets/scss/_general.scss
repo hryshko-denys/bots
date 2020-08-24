@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+input {
+  font-family: 'Raleway', 'Arial', sans-serif;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+  overflow: hidden;
+}
+
+/*to fix autofill background*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: inherit !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px inherit inset !important;
+}
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  background-color: inherit;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+}
