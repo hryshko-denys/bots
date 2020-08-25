@@ -130,6 +130,7 @@ export default {
     },
 
     validateName() {
+      console.log('hey')
       if (this.name) {
         this.nameError = isValueValid(this.name)
         this.nameInputDirty = true
